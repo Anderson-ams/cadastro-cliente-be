@@ -23,7 +23,9 @@ import java.util.UUID;
 @Entity 
 public class Cliente {
 	@Id
-	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(columnDefinition = "uuid", name="idCliente",
+			updatable = false, unique = true, nullable = false)
 	private UUID id;
 	@NotBlank
 	private String nome;
@@ -37,7 +39,6 @@ public class Cliente {
 	private String endereco;
 
 	public Cliente(ClienteRequest clienteRequest) {
-		this.id = UUID.randomUUID();
 		this.nome = clienteRequest.getNome();
 		this.cpf = clienteRequest.getCpf();
 		this.telefone = clienteRequest.getTelefone();
