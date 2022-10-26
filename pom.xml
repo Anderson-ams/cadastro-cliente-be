@@ -13,7 +13,7 @@
 	<artifactId>cliente-empresa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>cliente-empresa</name>
-	<description>Aplicação para cadastro de clientes da empresa WithStyle</description>
+	<description>Aplicação para cadastro de clientes</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

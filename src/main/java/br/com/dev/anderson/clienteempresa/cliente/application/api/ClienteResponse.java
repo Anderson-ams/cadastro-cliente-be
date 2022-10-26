@@ -3,11 +3,11 @@ package br.com.dev.anderson.clienteempresa.cliente.application.api;
 import br.com.dev.anderson.clienteempresa.cliente.domain.Cliente;
 import lombok.Value;
 
+import java.util.UUID;
+
 @Value
 public class ClienteResponse {
-
-	
-	private Long id;
+	private UUID id;
 	private String nome;
 	private String cpf;
 	private String telefone;

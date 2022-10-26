@@ -1,6 +1,7 @@
 package br.com.dev.anderson.clienteempresa.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import br.com.dev.anderson.clienteempresa.cliente.domain.Cliente;
@@ -9,7 +10,7 @@ import lombok.Value;
 @Value
 public class ClienteListResponse {
 
-	private Long id;
+	private UUID id;
 	private String nome;
 	private String cpf;
 	private String telefone;
@@ -24,7 +25,8 @@ public class ClienteListResponse {
 	}
 
 	public static List<ClienteListResponse> converte(List<Cliente> cliente) {
-		return cliente.stream().map(ClienteListResponse::new)
+		return cliente.stream()
+				.map(ClienteListResponse::new)
 				.collect(Collectors.toList());
 	}
 }

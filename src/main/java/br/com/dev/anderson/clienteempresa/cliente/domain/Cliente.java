@@ -15,18 +15,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Entity 
 public class Cliente {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	private UUID id;
 	@NotBlank
 	private String nome;
 	@NotBlank
-	@CPF
+	//@CPF
 	@Column(unique = true)
 	private String cpf;
 	@NotBlank
@@ -35,6 +37,7 @@ public class Cliente {
 	private String endereco;
 
 	public Cliente(ClienteRequest clienteRequest) {
+		this.id = UUID.randomUUID();
 		this.nome = clienteRequest.getNome();
 		this.cpf = clienteRequest.getCpf();
 		this.telefone = clienteRequest.getTelefone();
@@ -42,4 +45,3 @@ public class Cliente {
 	}
 }
 
-//https://youtu.be/Nbh4WNUKEB0?t=194
