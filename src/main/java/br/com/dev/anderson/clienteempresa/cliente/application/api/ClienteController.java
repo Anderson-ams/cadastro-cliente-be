@@ -1,6 +1,7 @@
 package br.com.dev.anderson.clienteempresa.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,9 +25,18 @@ public class ClienteController implements ClienteApi{
 	}
 
 	@Override
-	public List<ClienteListResponse> getCliente() {
+	public List<ClienteListResponse> buscaTodosClientes() {
+		log.info("[inicia] ClienteController - getCliente");
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
+		log.info("[finaliza] ClienteController - getCliente");
 		return clientes;
 	}
 
+	@Override
+	public ClienteResponse buscaClientePorId(UUID idCliente) {
+		log.info("[INICIA] ClienteController - buscaClientePorId");
+		ClienteResponse clienteResponse = clienteService.buscaClientePorId(idCliente);
+		log.info("[FINALIZA] ClienteController - buscaClientePorId");
+		return clienteResponse;
+	}
 }
