@@ -6,9 +6,11 @@ import java.util.UUID;
 import br.com.dev.anderson.clienteempresa.cliente.domain.Cliente;
 
 public interface ClienteRepository {
-	Cliente salvaNoBanco(Cliente cliente);
+    Cliente salvaNoBanco(Cliente cliente);
 
-	List<Cliente> buscaTodosClientes();
+    List<Cliente> buscaTodosClientes();
 
-	Cliente clienteBuscadoPorId(UUID idCliente);
+    Cliente clienteBuscadoPorId(UUID idCliente);
+
+
 }

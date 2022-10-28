@@ -19,4 +19,10 @@ public interface ClienteApi {
     @GetMapping(value = "/{idCliente}")
     @ResponseStatus(code = HttpStatus.OK)
     ClienteResponse buscaClientePorId(@PathVariable UUID idCliente);
+
+    @PatchMapping(value = "/{idCliente}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void atualizaCliente(@PathVariable UUID idCliente,
+                         @RequestBody @Valid ClienteRequestPETCH clienteRequestPETCH);
+
 }
