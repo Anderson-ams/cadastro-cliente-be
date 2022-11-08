@@ -9,6 +9,8 @@ import br.com.dev.anderson.clienteempresa.cliente.application.service.ClienteSer
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
+import javax.validation.Valid;
+
 @RestController
 @Log4j2
 @RequiredArgsConstructor
@@ -18,21 +20,26 @@ public class ClienteController implements ClienteApi{
 
 	@Override
 	public ClienteResponse postCliente(ClienteRequest clienteRequest) {
-		log.info("[inicia] ClienteController - postCliente");
 		ClienteResponse clienteCriado = clienteService.criaCliente(clienteRequest);
-		log.info("[finaliza] ClienteController - postCliente");
 		return clienteCriado;
 	}
 
 	@Override
-	public List<ClienteListResponse> getCliente() {
+	public List<ClienteListResponse> buscaTodosClientes() {
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		return clientes;
 	}
 
-    @Override
-    public void deletaCliente(UUID idCliente) {
-        clienteService.deletaCliente(idCliente);
-    }
+	@Override
+	public ClienteResponse buscaClientePorId(UUID idCliente) {
+		ClienteResponse clienteResponse = clienteService.buscaClientePorId(idCliente);
+		return clienteResponse;
+	}
 
+	@Override
+	public void atualizaCliente(UUID idCliente, @Valid ClienteRequestPETCH clienteRequestPETCH) {
+		log.info("PassouAqui=@@1@@ - INICIA CONTROLLER");
+		clienteService.atualizaCliente(idCliente, clienteRequestPETCH);
+		log.info("PassouAqui=@@1@@ - FINALIZOU CONTROLLER");
+	}
 }

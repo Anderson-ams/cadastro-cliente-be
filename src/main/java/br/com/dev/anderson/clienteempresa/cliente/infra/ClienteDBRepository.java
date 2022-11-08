@@ -8,6 +8,6 @@ import br.com.dev.anderson.clienteempresa.cliente.domain.Cliente;
 
 import java.util.UUID;
 
-public interface ClienteDBRepository extends JpaRepository<Cliente, Id>{
+public interface ClienteDBRepository extends JpaRepository<Cliente, UUID>{
 
 }
