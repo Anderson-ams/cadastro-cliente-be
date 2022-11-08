@@ -1,6 +1,7 @@
 package br.com.dev.anderson.clienteempresa.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,10 @@ public class ClienteController implements ClienteApi{
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		return clientes;
 	}
+
+    @Override
+    public void deletaCliente(UUID idCliente) {
+        clienteService.deletaCliente(idCliente);
+    }
 
 }

@@ -1,6 +1,7 @@
 package br.com.dev.anderson.clienteempresa.cliente.infra;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
@@ -25,4 +26,9 @@ public class ClienteRepositoryDB implements ClienteRepository {
 		List<Cliente> todosClientes = clienteDBRepository.findAll();
 		return todosClientes;
 	}
+
+    @Override
+    public void deletarCliente(UUID idCliente) {
+        //clienteDBRepository.deleteById(idCliente);
+    }
 }

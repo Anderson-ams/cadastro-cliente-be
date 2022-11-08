@@ -1,6 +1,7 @@
 package br.com.dev.anderson.clienteempresa.cliente.application.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -35,5 +36,11 @@ public class ClienteApplicationService implements ClienteService {
 		log.info("[FINALIZADO] ClienteService - buscaCliente");
 		return ClienteListResponse.converte(cliente);
 	}
+
+    @Override
+    public void deletaCliente(UUID idCliente) {
+        //busca id cliente: var idCliente = buscaClienteId();
+		clienteRepository.deletarCliente(idCliente);
+    }
 
 }
