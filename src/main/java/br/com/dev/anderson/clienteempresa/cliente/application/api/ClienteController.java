@@ -42,4 +42,9 @@ public class ClienteController implements ClienteApi{
 		clienteService.atualizaCliente(idCliente, clienteRequestPETCH);
 		log.info("PassouAqui=@@1@@ - FINALIZOU CONTROLLER");
 	}
+
+	@Override
+	public void deletaCliente(UUID idCliente) {
+
+	}
 }

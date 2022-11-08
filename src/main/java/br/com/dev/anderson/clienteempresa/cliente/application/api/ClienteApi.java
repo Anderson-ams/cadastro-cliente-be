@@ -32,14 +32,6 @@ public interface ClienteApi {
                          @RequestBody @Valid ClienteRequestPETCH clienteRequestPETCH);
 
 
-	@PostMapping
-	@ResponseStatus(code = HttpStatus.CREATED)
-	ClienteResponse postCliente(@RequestBody @Valid ClienteRequest clienteRequest);
-
-	@GetMapping
-	@ResponseStatus(code = HttpStatus.OK)
-	List<ClienteListResponse> getCliente();
-
 	@DeleteMapping(value = "/{idCliente}/deletar")
 	@ResponseStatus(code = HttpStatus.OK)
 	void deletaCliente(@PathVariable UUID idCliente);
