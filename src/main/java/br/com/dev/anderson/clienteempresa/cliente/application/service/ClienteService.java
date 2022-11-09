@@ -17,4 +17,6 @@ public interface ClienteService {
     ClienteResponse buscaClientePorId(UUID idCliente);
 
     void atualizaCliente(UUID idCliente, ClienteRequestPETCH clienteRequestPETCH);
+
+    void deletaCliente(UUID idCliente);
 }

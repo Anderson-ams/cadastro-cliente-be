@@ -46,5 +46,11 @@ public class ClienteApplicationService implements ClienteService {
         log.info("PassouAqui=@@2@@ - FINALIZA APPLICATIONSERVICE");
     }
 
+    @Override
+    public void deletaCliente(UUID idCliente) {
+//        Cliente cliente = clienteRepository.clienteBuscadoPorId(idCliente);
+        clienteRepository.deletarCliente(idCliente);
+    }
+
 
 }

@@ -13,4 +13,5 @@ public interface ClienteRepository {
     Cliente clienteBuscadoPorId(UUID idCliente);
 
 
+    void deletarCliente(UUID idCliente);
 }

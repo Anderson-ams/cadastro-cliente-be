@@ -41,4 +41,9 @@ public class ClienteRepositoryDB implements ClienteRepository {
 		return cliente;
 	}
 
+	@Override
+	public void deletarCliente(UUID idCliente) {
+		clienteDBRepository.deleteById(idCliente);
+	}
+
 }

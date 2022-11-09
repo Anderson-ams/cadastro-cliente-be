@@ -45,6 +45,6 @@ public class ClienteController implements ClienteApi{
 
 	@Override
 	public void deletaCliente(UUID idCliente) {
-
+	clienteService.deletaCliente(idCliente);
 	}
 }
