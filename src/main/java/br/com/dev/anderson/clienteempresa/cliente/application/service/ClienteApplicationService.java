@@ -48,7 +48,6 @@ public class ClienteApplicationService implements ClienteService {
 
     @Override
     public void deletaCliente(UUID idCliente) {
-//        Cliente cliente = clienteRepository.clienteBuscadoPorId(idCliente);
         clienteRepository.deletarCliente(idCliente);
     }
 
