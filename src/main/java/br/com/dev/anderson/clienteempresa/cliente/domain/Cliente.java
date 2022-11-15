@@ -31,7 +31,7 @@ public class Cliente {
     @NotBlank
     private String nome;
     @NotBlank
-    //@CPF
+    @CPF
     @Column(unique = true)
     private String cpf;
     @NotBlank
